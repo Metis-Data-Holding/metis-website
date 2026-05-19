@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl, alternateLanguages, localizedUrl } from "@/lib/seo";
+import { alternateLanguages, localizedUrl } from "@/lib/seo";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const dynamic = "force-static";
 
@@ -8,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: absoluteUrl(),
+      url: `${siteConfig.domain}/`,
       lastModified,
       changeFrequency: "weekly",
       priority: 1,
