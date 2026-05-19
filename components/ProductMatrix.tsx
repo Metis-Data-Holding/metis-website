@@ -1,28 +1,6 @@
 import type { CSSProperties } from "react";
 import type { SiteContent } from "@/lib/content";
-
-function DramaSlots() {
-  const slots = [
-    { id: "drama-feature", num: "01", label: "hero · feature", className: "feature" },
-    { id: "drama-02", num: "02", label: "still" },
-    { id: "drama-03", num: "03", label: "still" },
-    { id: "drama-04", num: "04", label: "still" },
-    { id: "drama-05", num: "05", label: "still · key" },
-  ];
-
-  return (
-    <div className="drama-slots">
-      {slots.map((slot) => (
-        <div className={`drama-slot ${slot.className || ""}`} key={slot.id}>
-          <div className="drama-slot-inner" aria-hidden="true" />
-          <span className="slot-tag">
-            <span className="num">{slot.num}</span> · {slot.label}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
+import { DramaGallery } from "./DramaGallery";
 
 function GameCapabilities() {
   const cols = [
@@ -138,7 +116,7 @@ export function ProductMatrix({ t }: { t: SiteContent }) {
             </div>
             <div className="show-card-body">
               <p className="show-card-desc">{t.show.drama.desc}</p>
-              <DramaSlots />
+              <DramaGallery slots={t.show.drama.slots} labels={t.show.drama.lightbox} />
             </div>
             <div className="show-card-foot">
               <span>{t.show.drama.meta.join("  ·  ")}</span>

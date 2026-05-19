@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git --no-pager diff .gitignore)",
+      "PowerShell(Select-String -Path F:\\\\Project\\\\Metis\\\\metis-website\\\\out\\\\zh\\\\index.html -Pattern \"drama-slot|lightbox\" | Select-Object -First 5 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(160, $_.Line.Length\\)\\) })"
+    ]
+  }
+}

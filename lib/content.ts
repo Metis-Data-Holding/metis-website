@@ -34,6 +34,18 @@ export const content = {
         desc: "以剧本为入口，自动完成分镜、角色一致性、口型同步、配音、字幕与 BGM 编排——端到端产出可发布的竖屏短剧。",
         meta: ["pipeline.v1.4", "9:16 · 60fps"],
         link: "查看更多",
+        slots: [
+          {
+            src: "/drama/drama-01-feature.webp",
+            video: "/drama/drama-01-feature.mp4",
+            alt: "AI 生成短剧 · 关键画面",
+          },
+          { src: "/drama/drama-02.webp", alt: "AI 生成短剧剧照 02" },
+          { src: "/drama/drama-03.webp", alt: "AI 生成短剧剧照 03" },
+          { src: "/drama/drama-04.webp", alt: "AI 生成短剧剧照 04" },
+          { src: "/drama/drama-05.webp", alt: "AI 生成短剧剧照 05" },
+        ],
+        lightbox: { close: "关闭", prev: "上一张", next: "下一张" },
       },
       game: {
         title: "AI Game",
@@ -143,6 +155,18 @@ export const content = {
         desc: "Scripts in, publishable vertical drama out. Auto paneling, character consistency, lip-sync, voiceover, subtitles and BGM — end-to-end.",
         meta: ["pipeline.v1.4", "9:16 · 60fps"],
         link: "See more",
+        slots: [
+          {
+            src: "/drama/drama-01-feature.webp",
+            video: "/drama/drama-01-feature.mp4",
+            alt: "AI-generated short drama key still",
+          },
+          { src: "/drama/drama-02.webp", alt: "AI-generated short drama still 02" },
+          { src: "/drama/drama-03.webp", alt: "AI-generated short drama still 03" },
+          { src: "/drama/drama-04.webp", alt: "AI-generated short drama still 04" },
+          { src: "/drama/drama-05.webp", alt: "AI-generated short drama still 05" },
+        ],
+        lightbox: { close: "Close", prev: "Previous", next: "Next" },
       },
       game: {
         title: "AI Game",
