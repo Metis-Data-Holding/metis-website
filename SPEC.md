@@ -5,19 +5,19 @@
 > 域名：`metisdata.ai`  
 > 文档用途：本文件用于指导 Codex、开发者或未来团队成员完成 Metis 第一版公司首页式 landing page 的设计、开发、部署和验收。
 
-> 当前更新说明：本版本已根据“已有 Claude Design 原型将作为视觉与业务基准”的目标进行调整。开发时应优先保留原型中的视觉效果、logo、联系邮箱、产品名称和产品信息；本 SPEC 主要用于补齐正式上线所需的工程结构、多语言路由、SEO/AEO、部署和验收要求。
+> 当前更新说明：当前 Next.js 项目中的已实现页面是视觉与业务基准。开发时应优先保留当前页面中的视觉效果、logo、联系邮箱、产品名称和产品信息；本 SPEC 主要用于约束正式上线所需的工程结构、多语言路由、SEO/AEO、部署和验收要求。
 
 > 重要补充：项目根目录应同时包含 `DESIGN.md`。`SPEC.md` 负责产品需求、信息架构、路由、SEO/AEO、部署和验收；`DESIGN.md` 负责视觉还原、色彩、排版、动效、组件观感和移动端视觉规则。Codex 开发时必须同时阅读 `SPEC.md` 与 `DESIGN.md`。
 
 ---
 
-## 0. Claude Design 原型优先级说明
+## 0. 当前页面优先级说明
 
-当前项目已经存在一个由同事制作的 Claude Design landing page 原型。该原型不是要被丢弃的草稿，而是本项目当前的**视觉与业务内容基准**。
+当前 Next.js 项目中的 Metis landing page 是本项目当前的**视觉与业务内容基准**。后续迭代以当前实现和线上效果为准。
 
 ### 0.1 必须优先保留的内容
 
-开发过程中必须尽量保留 Claude Design 原型中的以下内容：
+开发过程中必须尽量保留当前页面中的以下内容：
 
 ```text
 整体视觉风格
@@ -33,7 +33,7 @@ Hero 区域的 terminal / workflow 视觉
 
 ### 0.2 SPEC.md 的职责
 
-本 SPEC 的主要作用不是重新设计页面，而是将现有 Claude Design 原型升级为一个正式、可维护、可部署、符合 SEO/AEO 要求的项目。
+本 SPEC 的主要作用不是重新设计页面，而是约束当前页面作为正式、可维护、可部署 landing page 的长期演进。
 
 本 SPEC 主要用于补齐：
 
@@ -48,13 +48,13 @@ sitemap.xml
 robots.txt
 Organization / WebSite / FAQPage JSON-LD
 移动端适配修复
-BytePlus ECS + Nginx + Cloudflare 部署支持
+GitHub + Cloudflare Pages 自动部署支持
 验收标准
 ```
 
 ### 0.3 冲突处理原则
 
-如果 Claude Design 原型与本 SPEC 在以下内容上存在冲突，应**优先以 Claude Design 原型为准**，除非项目负责人明确要求修改：
+如果当前页面与本 SPEC 在以下内容上存在冲突，应**优先以当前页面为准**，除非项目负责人明确要求修改：
 
 ```text
 logo
@@ -66,7 +66,7 @@ logo
 页面整体氛围
 ```
 
-如果 Claude Design 原型与本 SPEC 在以下内容上存在差异，应**优先以本 SPEC 为准**：
+如果当前页面与本 SPEC 在以下内容上存在差异，应**优先以本 SPEC 为准**：
 
 ```text
 路由结构
@@ -81,12 +81,12 @@ sitemap / robots
 
 ### 0.4 DESIGN.md 的职责与优先级
 
-项目根目录中应存在 `DESIGN.md`。该文件是本项目的**视觉约束文档**，用于防止 Codex 在工程化重构过程中偏离 Claude Design 原型。
+项目根目录中应存在 `DESIGN.md`。该文件是本项目的**视觉约束文档**，用于防止后续迭代偏离当前页面。
 
 `DESIGN.md` 主要负责：
 
 ```text
-当前 Claude Design 原型的视觉基准说明
+当前页面的视觉基准说明
 必须保留的深色高级技术感
 Metis logo 和品牌资产使用原则
 主色、accent 色、背景、卡片、边框和文字颜色的处理原则
@@ -103,14 +103,14 @@ Hero 区域 terminal / workflow 视觉还原要求
 ```text
 SPEC.md：决定做什么、有哪些页面、有哪些产品信息、路由如何设计、SEO/AEO 如何实现、如何部署、如何验收。
 DESIGN.md：决定页面应该长什么样、哪些视觉元素必须保留、哪些视觉方向禁止偏离。
-Claude Design 原型：当前视觉与业务内容基准。
+当前页面：当前视觉与业务内容基准。
 ```
 
 如果 `SPEC.md` 与 `DESIGN.md` 在视觉描述上存在冲突，应优先以 `DESIGN.md` 为准。
 
 如果 `SPEC.md` 与 `DESIGN.md` 在产品内容、路由、SEO/AEO、部署或验收要求上存在冲突，应优先以 `SPEC.md` 为准。
 
-如果 `DESIGN.md` 与 Claude Design 原型在视觉细节上存在冲突，应优先以 Claude Design 原型为准，并由 Codex 在审计阶段指出差异，等待项目负责人确认。
+如果 `DESIGN.md` 与当前页面在视觉细节上存在冲突，应优先以当前页面为准，并由修改者指出差异，等待项目负责人确认。
 
 ---
 
@@ -122,19 +122,19 @@ Codex 在开发时必须遵守：
 不要重新设计页面。
 不要改成浅色 SaaS 风格。
 不要擅自替换 logo、邮箱、产品名称或产品信息。
-不要为了套用 SPEC 而破坏 Claude Design 原型的视觉效果。
-请以 Claude Design 原型为视觉和业务内容基准，以 SPEC.md 为工程化和上线标准。
+不要为了套用 SPEC 而破坏当前页面的视觉效果。
+请以当前页面为视觉和业务内容基准，以 SPEC.md 为工程和上线标准。
 ```
 
 ---
 
 ## 1. 项目背景
 
-Metis 目前是一家处于早期阶段的 AI 产品公司，注册主体在新加坡。根据当前 Claude Design 原型，Metis 的对外产品叙事应围绕 **AIGC product portfolio / AIGC 产品矩阵** 展开，核心方向包括内容生产、游戏娱乐与开发者工具。
+Metis 目前是一家处于早期阶段的 AI 产品公司，注册主体在新加坡。根据当前页面，Metis 的对外产品叙事应围绕 **AIGC product portfolio / AIGC 产品矩阵** 展开，核心方向包括内容生产、游戏娱乐与开发者工具。
 
 当前已有一个内部可用的 AI 短剧生产工具，该工具已经可以服务公司内部短剧生产流程，但对外开放前仍需要进一步产品化、界面优化、稳定性建设和商业化设计。
 
-Claude Design 原型中当前展示的三条产品线为：
+当前页面展示的三条产品线为：
 
 1. **AI Short Drama Platform**：面向 AI 短剧生产，围绕剧本、分镜、角色一致性、口型同步、配音、字幕、BGM 和竖屏短剧生产流程展开。
 2. **AI Game**：围绕 “AI plays games × AI builds games” 两条路径，覆盖智能 NPC、自动测试、玩家陪伴、实时教练、美术资源、游戏设计文档、引擎插件级代码生成与动画序列等方向。
@@ -158,7 +158,7 @@ Claude Design 原型中当前展示的三条产品线为：
 4. 为 AI 短剧创作者、内容团队、高校学生、AI 初学者、企业和高校组织提供不同的行动入口。
 5. 支持中英文访问，兼顾国际化和中文用户。
 6. 符合基础 SEO 与 AEO 要求，方便搜索引擎和 AI 问答系统理解网站内容。
-7. 支持部署到 BytePlus ECS 服务器，并通过 Cloudflare 管理域名、DNS、SSL 和 CDN。
+7. 支持通过 GitHub + Cloudflare Pages 自动部署，并通过 Cloudflare 管理域名、DNS、SSL 和 CDN。
 
 ---
 
@@ -212,10 +212,10 @@ metisdata.ai
 重要原则：
 
 ```text
-页面中的实际联系邮箱应以 Claude Design 原型中已经使用并经内部确认的邮箱为准。
+页面中的实际联系邮箱应以当前页面中已经使用并经内部确认的邮箱为准。
 ```
 
-如果原型中使用的是 `tech@metisdata.ai`，则继续使用 `tech@metisdata.ai`；如果后续负责人确认改为 `tech@metisdata.ai`，再统一替换。
+如果当前页面中使用的是 `tech@metisdata.ai`，则继续使用 `tech@metisdata.ai`；如果后续负责人确认改为 `tech@metisdata.ai`，再统一替换。
 
 开发时应将邮箱集中放入配置文件，例如：
 
@@ -454,7 +454,7 @@ Partner With Us
 
 ## 7. 产品矩阵
 
-第一版网站展示三条产品线，必须优先对齐 Claude Design 原型中的产品信息和视觉顺序。当前原型中的三条产品线为：
+第一版网站展示三条产品线，必须优先对齐 当前页面中的产品信息和视觉顺序。当前页面中的三条产品线为：
 
 ```text
 AI Short Drama Platform
@@ -465,7 +465,7 @@ AI Game
 重要原则：
 
 ```text
-产品名称、产品顺序、产品说明、邮箱、logo 和当前产品信息应优先以 Claude Design 原型为准。
+产品名称、产品顺序、产品说明、邮箱、logo 和当前产品信息应优先以当前页面为准。
 ```
 
 同时，无论后续是否调整产品名称，都必须遵守以下要求：
@@ -486,19 +486,19 @@ CTA 路径清楚
 AI 短剧生成平台
 ```
 
-原型中的英文说明：
+当前页面中的英文说明：
 
 ```text
 Scripts in, publishable vertical drama out. Auto paneling, character consistency, lip-sync, voiceover, subtitles and BGM — end-to-end.
 ```
 
-原型中的中文说明：
+当前页面中的中文说明：
 
 ```text
 以剧本为入口，自动完成分镜、角色一致性、口型同步、配音、字幕与 BGM 编排——端到端产出可发布的竖屏短剧。
 ```
 
-原型中的元信息：
+当前页面中的元信息：
 
 ```text
 pipeline.v1.4
@@ -522,19 +522,19 @@ pipeline.v1.4
 AI API Hub
 ```
 
-原型中的英文说明：
+当前页面中的英文说明：
 
 ```text
 One account for every frontier LLM. Side-by-side comparison, unified billing, prompt marketplace. OpenAI-compatible — no juggling keys.
 ```
 
-原型中的中文说明：
+当前页面中的中文说明：
 
 ```text
 一个账号调用所有主流大模型：多模型并排对比、统一计费、提示词社区分享。OpenAI 兼容接口，免去多套密钥的管理成本。
 ```
 
-原型中的元信息：
+当前页面中的元信息：
 
 ```text
 unified API
@@ -543,7 +543,7 @@ OpenAI compat
 
 说明：
 
-- 该产品在 Claude Design 原型中是开发者工具方向，不应改名为 AI API Gateway，除非负责人明确要求。
+- 该产品在 当前页面中是开发者工具方向，不应改名为 AI API Gateway，除非负责人明确要求。
 - 如 `unified billing`、`prompt marketplace`、`OpenAI-compatible` 等能力已经被内部确认，可以保留。
 - 如果这些能力尚未上线，但属于明确规划，可在页面中使用更克制表述，例如 `planned`、`building`、`exploring`。
 - CTA 可使用 `Learn more` / `了解更多` 或跳转至 `mailto:tech@metisdata.ai`。
@@ -564,19 +564,19 @@ AI Game
 AI Game 是 Metis 面向游戏娱乐与游戏开发工作流的 AIGC 产品方向，核心叙事为 “AI plays games × AI builds games”。
 ```
 
-原型中的英文说明：
+当前页面中的英文说明：
 
 ```text
 AI plays games × AI builds games: smart NPCs, auto-QA, player companions; plus art assets, design docs, and engine-plugin codegen.
 ```
 
-原型中的中文说明：
+当前页面中的中文说明：
 
 ```text
 AI 玩游戏 × AI 造游戏两个方向：智能 NPC、自动测试、玩家陪伴；以及美术资源、设计文档与引擎插件级的 AI 辅助编程。
 ```
 
-原型中的元信息：
+当前页面中的元信息：
 
 ```text
 agents · assets
@@ -627,7 +627,7 @@ Animation — frame seq.
 
 说明：
 
-- AI Game 是当前 Claude Design 原型中的正式产品方向之一，Codex 不得删除。
+- AI Game 是当前页面中的正式产品方向之一，Codex 不得删除。
 - 页面应保留 “AI plays games × AI builds games” 这一核心表达。
 - 页面应保留双列能力展示结构，或者在移动端改为上下两组卡片。
 - 如果具体能力仍处于探索阶段，可在产品状态或描述中使用 `Exploring`、`In development`、`正在探索` 等措辞，但不要删除该产品方向。
@@ -823,7 +823,7 @@ Metis 正在构建覆盖 AI 短剧、AI 游戏和 AI 开发者工具的 AIGC 产
 
 目的：
 
-展示 Metis 当前 Claude Design 原型中的三条产品线，并保留现有视觉结构。
+展示 Metis 当前页面中的三条产品线，并保留现有视觉结构。
 
 英文标题：
 
@@ -849,7 +849,7 @@ From content (short drama) to entertainment (games) to developer tooling (API hu
 从内容（短剧）、到娱乐（游戏）、再到开发者工具（API 平台），在 AIGC 全栈上寻找最有价值的应用层。
 ```
 
-三个产品卡片应优先保持 Claude Design 原型中的视觉顺序与展示方式。
+三个产品卡片应优先保持 当前页面中的视觉顺序与展示方式。
 
 #### 产品卡片 1：AI Short Drama Platform
 
@@ -1232,7 +1232,7 @@ Q: What is Metis?
 A: Metis is a Singapore-registered AIGC company building products across AI short drama, AI games, and AI developer tooling.
 
 Q: What are Metis' product lines?
-A: The current product lines shown in the Claude Design prototype are AI Short Drama Platform, AI Game, and AI API Hub.
+A: The current product lines shown in the current page are AI Short Drama Platform, AI Game, and AI API Hub.
 
 Q: What is AI Game?
 A: AI Game is Metis' product direction for game entertainment and game development workflows. It focuses on “AI plays games × AI builds games”, including smart NPCs, auto-QA, player companions, live coaching, art assets, design docs, engine-plugin codegen, and animation workflows.
@@ -1257,7 +1257,7 @@ Q: Metis 是什么？
 A: Metis 是一家注册在新加坡的 AIGC 公司，当前围绕 AI 短剧、AI 游戏和 AI 开发者工具构建产品矩阵。
 
 Q: Metis 当前有哪些产品线？
-A: 当前 Claude Design 原型中展示的产品线包括 AI Short Drama Platform、AI Game 和 AI API Hub。
+A: 当前页面中展示的产品线包括 AI Short Drama Platform、AI Game 和 AI API Hub。
 
 Q: AI Game 是什么？
 A: AI Game 是 Metis 面向游戏娱乐与游戏开发工作流的产品方向，核心叙事是 “AI 玩游戏 × AI 造游戏”，包括智能 NPC、自动测试、玩家陪伴、实时教练、美术资源、游戏设计文档、引擎插件代码生成和动画工作流。
@@ -1597,8 +1597,8 @@ Get in touch
 重要说明：
 
 ```text
-产品 CTA 应优先保留 Claude Design 原型中的按钮文案和链接行为。
-如果当前原型统一使用 mailto:tech@metisdata.ai，则第一版可继续使用该方式。
+产品 CTA 应优先保留 当前页面中的按钮文案和链接行为。
+如果当前页面统一使用 mailto:tech@metisdata.ai，则第一版可继续使用该方式。
 ```
 
 ### 14.3 CTA 行为
@@ -1616,7 +1616,7 @@ Get in touch
 
 ### 15.1 整体风格
 
-本项目的视觉风格应以 Claude Design 原型为准。
+本项目的视觉风格应以当前页面为准。
 
 核心风格关键词：
 
@@ -1657,17 +1657,17 @@ Hero 区域的 terminal / workflow 视觉
 
 ### 15.2 颜色建议
 
-颜色系统应从 Claude Design 原型中提取，不要由 Codex 自行重设。
+颜色系统应沿用当前页面，不要自行重设。
 
 建议处理方式：
 
 ```text
-从现有 styles.css / 原型截图中提取背景色、主文字色、次级文字色、accent 色、卡片色和边框色
-迁移到 Tailwind theme 或 CSS variables
+沿用 app/globals.css 中的背景色、主文字色、次级文字色、accent 色、卡片色和边框色
+通过 CSS variables 统一维护
 保持当前深色高级视觉方向
 ```
 
-如果必须新增颜色，应与原型中的主色和暗色背景协调，不得引入破坏整体风格的高饱和杂色。
+如果必须新增颜色，应与当前页面中的主色和暗色背景协调，不得引入破坏整体风格的高饱和杂色。
 
 ### 15.3 字体与排版
 
@@ -1780,7 +1780,7 @@ metis-landing-page/
 export const siteConfig = {
   name: "Metis",
   domain: "https://metisdata.ai",
-  contactEmail: "以 Claude Design 原型中的邮箱为准",
+  contactEmail: "以当前页面中的邮箱为准",
   waitlistFormUrl: process.env.NEXT_PUBLIC_WAITLIST_FORM_URL || "",
   contactFormUrl: process.env.NEXT_PUBLIC_CONTACT_FORM_URL || "",
   defaultLocale: "en",
@@ -2050,20 +2050,16 @@ FAQ section 可以添加 FAQPage 结构化数据。
 
 ---
 
-## 23. 部署要求：BytePlus ECS + Cloudflare
+## 23. 部署要求：GitHub + Cloudflare Pages
 
 ### 23.1 目标架构
 
 ```text
 用户浏览器
   ↓
-Cloudflare DNS / CDN / SSL
+Cloudflare DNS / CDN / SSL / Pages
   ↓
-BytePlus ECS
-  ↓
-Nginx
-  ↓
-Next.js app 或静态文件
+Cloudflare Pages static assets
 ```
 
 ### 23.2 推荐部署方式
@@ -2071,7 +2067,7 @@ Next.js app 或静态文件
 第一版推荐优先考虑：
 
 ```text
-Next.js static export + Nginx 静态托管
+Next.js static export + Cloudflare Pages Git 自动部署
 ```
 
 原因：
@@ -2080,48 +2076,47 @@ Next.js static export + Nginx 静态托管
 - 无需 Node.js 常驻服务。
 - 部署简单。
 - 稳定性高。
-- 服务器维护成本低。
+- 不需要维护自建服务器。
+- push 到 main 后可由 Cloudflare Pages 自动构建和发布。
 
-如果后续需要服务端功能，再切换为：
-
-```text
-Next.js Node.js runtime + PM2 + Nginx reverse proxy
-```
-
-### 23.3 ECS 服务器要求
-
-服务器需要安装：
+如果后续需要服务端能力，再评估：
 
 ```text
-Nginx
-Node.js LTS
-npm 或 pnpm
-Git
+Cloudflare Workers / Pages Functions / 独立后端服务
 ```
 
-如采用静态导出，构建可以在本地或 CI 中完成，服务器只需要 Nginx 托管构建产物。
+### 23.3 Cloudflare Pages 构建要求
 
-### 23.4 Nginx 基础要求
-
-Nginx 应支持：
+Cloudflare Pages 项目配置：
 
 ```text
-HTTPS
-静态文件托管
-gzip 或 brotli 压缩
-404 fallback
-缓存控制
+Build command: npm run build
+Build output directory: out
+Production branch: main
 ```
 
-### 23.5 Cloudflare 配置要求
+项目需要在 `next.config.ts` 中启用：
+
+```text
+output: "export"
+images.unoptimized: true
+```
+
+如 Cloudflare Pages 默认 Node.js 版本过旧，可设置：
+
+```text
+NODE_VERSION=20
+```
+
+### 23.4 Cloudflare 配置要求
 
 Cloudflare 中需要配置：
 
 ```text
-DNS 记录指向 BytePlus ECS 公网 IP
+metisdata.ai 绑定 Cloudflare Pages 项目
 SSL/TLS 使用 Full 或 Full (strict)
-开启 HTTPS
 配置 www 与根域名访问策略
+开启 HTTPS
 开启基础防护
 开启 Cloudflare Web Analytics（可选但推荐）
 ```
@@ -2133,6 +2128,22 @@ Flexible SSL
 ```
 
 因为它容易造成 HTTPS 重定向问题。
+
+### 23.5 静态导出访问要求
+
+构建后 `out/` 中至少应包含并可访问：
+
+```text
+/
+/en/
+/zh/
+/en/contact/
+/zh/contact/
+/sitemap.xml
+/robots.txt
+```
+
+`/` 在 static export 下应使用静态首页或客户端跳转到 `/en/`，不依赖 Next.js server redirect。
 
 ---
 
@@ -2286,91 +2297,14 @@ npm run build
 ### 27.9 准备部署
 
 ```text
-根据 BytePlus ECS 方案准备 build 输出
-准备 Nginx 配置
+确认 Cloudflare Pages Git 部署配置
+Build command: npm run build
+Build output directory: out
 准备部署说明 README
 ```
 
 ---
-
-## 28. 给 Codex 的初始 Prompt
-
-当前项目不应从零重新设计，而应基于已有 Claude Design 原型进行工程化升级。可以将以下 prompt 交给 Codex：
-
-```text
-请先阅读项目根目录中的 SPEC.md、DESIGN.md，并检查当前 Claude Design landing page 原型代码。
-
-最高优先级原则：
-1. 当前 Claude Design 原型是视觉基准。
-2. 当前原型中的 logo、联系邮箱、产品名称和产品信息是当前业务基准，除非我明确要求，否则不要擅自替换。
-3. 不要重新设计页面。
-4. 不要改成浅色 SaaS 风格。
-5. 不要偏离当前深色、高级、技术感、terminal-inspired 的视觉方向。
-6. SPEC.md 的作用是补齐正式项目需要的工程能力，包括多语言路由、SEO/AEO、sitemap、robots、JSON-LD、Contact 页面、BytePlus ECS + Nginx + Cloudflare 部署支持和验收标准。
-
-任务目标：
-将当前 Claude Design landing page 原型升级为一个正式、可维护、可部署的 landing page 项目。
-
-技术方向：
-- 优先采用 Next.js App Router
-- 使用 TypeScript
-- 使用 Tailwind CSS
-- 可以从当前原型的 CSS 中提取颜色、布局、动效和视觉变量
-- 尽量还原当前 Claude Design 的视觉效果
-- 保留当前 logo、主色、背景风格、terminal 视觉和整体布局氛围
-- 保留当前产品信息和联系邮箱
-- 修复当前移动端布局问题，尤其是标题、terminal 区域和卡片可能出现的溢出问题
-
-必须实现：
-- /en/ 英文首页
-- /zh/ 中文首页
-- /en/contact/ 英文联系页面
-- /zh/contact/ 中文联系页面
-- / 根路径根据浏览器语言跳转，或默认跳转 /en/
-- 每个页面都有语言切换入口
-- 所有中英文文案集中管理
-- 所有品牌、邮箱、域名、表单链接集中配置
-- SEO metadata
-- canonical
-- hreflang
-- sitemap.xml
-- robots.txt
-- Organization JSON-LD
-- WebSite JSON-LD
-- 如果页面包含 FAQ，则添加 FAQPage JSON-LD
-- npm install、npm run dev、npm run build 必须正常运行
-- 准备 BytePlus ECS + Nginx + Cloudflare 部署说明
-
-请先不要直接大规模改代码。
-请先输出：
-1. 你对当前项目结构的理解
-2. 你准备保留的视觉元素
-3. 你准备保留的业务信息，包括 logo、邮箱、产品名称
-4. 你准备补齐的 SPEC 要求
-5. DESIGN.md 中必须遵守的视觉规则
-6. 推荐的新项目结构
-7. 可能存在的风险
-等我确认后，再开始实现。
-```
-
-如果 Codex 已经完成上述审计并得到确认，再使用第二条 prompt 开始实现：
-
-```text
-现在请根据刚才确认的方案开始工程化重构。
-
-请创建 Next.js + TypeScript + Tailwind CSS 项目结构，并迁移当前 Claude Design 原型的视觉、内容和资源。
-
-要求：
-- 视觉尽量贴近原型
-- 内容以原型为准
-- 工程能力以 SPEC.md 为准
-- 视觉还原以 DESIGN.md 和 Claude Design 原型为准
-- 每完成一个主要阶段，请运行构建或检查，并说明完成情况
-```
-
----
-
-## 29. 验收标准
+## 28. 验收标准
 
 ### 29.1 页面验收
 
@@ -2395,11 +2329,11 @@ npm run build
 
 ```text
 Metis 定位清楚
-Claude Design 原型中确认的产品方向展示清楚
+当前页面中确认的产品方向展示清楚
 产品状态展示清楚
 没有夸大未完成产品
 中英文内容语义一致
-Contact 邮箱与 Claude Design 原型确认的邮箱一致
+Contact 邮箱与 当前页面确认的邮箱一致
 FAQ 可见
 ```
 
@@ -2408,7 +2342,7 @@ FAQ 可见
 必须满足：
 
 ```text
-重构后的桌面端首屏与 Claude Design 原型保持同一视觉方向
+后续修改后的桌面端首屏与 当前页面保持同一视觉方向
 深色、高级、terminal-inspired 的品牌气质没有丢失
 Metis logo、主色、背景风格和产品卡片视觉被保留
 Hero 区域 terminal / workflow 视觉没有被删除或大幅弱化
@@ -2458,14 +2392,14 @@ metisdata.ai 可访问
 HTTPS 正常
 Cloudflare DNS 生效
 Cloudflare SSL/TLS 配置为 Full 或 Full (strict)
-Nginx 正常返回页面
+Cloudflare Pages 正常返回页面
 www 与根域名策略清楚
 无重定向循环
 ```
 
 ---
 
-## 30. 后续迭代路线
+## 29. 后续迭代路线
 
 ### 30.1 第二版
 
@@ -2554,7 +2488,7 @@ Contact
 
 ---
 
-## 31. 第一版最终交付物
+## 30. 第一版最终交付物
 
 第一版项目完成后，应交付：
 
@@ -2566,9 +2500,8 @@ SEO/AEO 基础配置
 sitemap.xml
 robots.txt
 结构化数据
-BytePlus ECS 部署说明
-Nginx 配置示例
-Cloudflare 配置说明
+Cloudflare Pages Git 自动部署说明
+Cloudflare 域名与 SSL 配置说明
 README.md
 SPEC.md
 DESIGN.md
@@ -2576,7 +2509,7 @@ DESIGN.md
 
 ---
 
-## 32. 重要原则
+## 31. 重要原则
 
 开发过程中必须遵守以下原则：
 
@@ -2590,60 +2523,28 @@ DESIGN.md
 
 ---
 
-## 33. 当前推荐决策汇总
+## 32. 当前推荐决策汇总
 
 ```text
 品牌展示名：Metis
 域名：metisdata.ai
-视觉基准：已有 Claude Design 原型
-logo：以 Claude Design 原型为准
-联系邮箱：以 Claude Design 原型中已确认邮箱为准
-产品信息：以 Claude Design 原型中已确认产品信息为准
+视觉基准：当前页面
+logo：以当前页面为准
+联系邮箱：以当前页面中已确认邮箱为准
+产品信息：以当前页面中已确认产品信息为准
 网站类型：公司首页式 landing page
 默认语言策略：自动检测，保留 /en/ 和 /zh/ 独立 URL
 第一版页面：/en/、/zh/、/en/contact/、/zh/contact/
 第一版不做：登录、后台、支付、博客、CMS
-部署目标：BytePlus ECS + Nginx + Cloudflare
+部署目标：GitHub + Cloudflare Pages
 前端技术：Next.js + TypeScript + Tailwind CSS
 表单策略：优先外部表单工具，暂不自建后端
 SEO/AEO：第一版必须实现基础配置
-工程策略：以 Claude Design 为视觉和内容基准，以 SPEC.md 为工程和上线标准，以 DESIGN.md 为视觉还原标准
+工程策略：以当前页面为视觉和内容基准，以 SPEC.md 为工程和上线标准，以 DESIGN.md 为视觉还原标准
 ```
 
 ---
-
-## 34. 当前开发进入方式
-
-当前阶段的目标不是让 Codex 从零生成一个新页面，而是让 Codex 先审计并工程化重构现有 Claude Design 原型。
-
-推荐进入开发的顺序：
-
-```text
-Step 1：把 SPEC.md 放在项目根目录
-Step 2：把 Claude Design 原型文件也放在同一个项目目录，或确保 Codex 能读取原型代码和 assets
-Step 3：确认项目根目录包含 SPEC.md、DESIGN.md 和 Claude Design 原型代码
-Step 4：将第 28 节第一条 prompt 发给 Codex
-Step 4：只让 Codex 先输出审计结果和重构计划，不要立即写代码
-Step 5：确认 Codex 是否正确识别 logo、邮箱、产品名称、视觉风格和页面结构
-Step 6：确认后，再发送第 28 节第二条 prompt 开始实现
-Step 7：实现后运行 npm install、npm run dev、npm run build
-Step 8：对照原型截图检查视觉还原度
-Step 9：对照本 SPEC 检查 SEO/AEO、多语言、Contact 页面和部署说明
-```
-
-第一阶段完成标准：
-
-```text
-Codex 已正确理解现有原型
-Codex 已明确哪些视觉和业务内容需要保留
-新项目结构已经确定
-没有擅自替换 logo、邮箱或产品信息
-没有把页面改成与原型不同的视觉方向
-```
-
----
-
-## 35. 完成定义
+## 33. 完成定义
 
 当以下条件全部满足时，认为第一版 Metis landing page 完成：
 
@@ -2657,4 +2558,3 @@ Codex 已明确哪些视觉和业务内容需要保留
 页面在移动端和桌面端均正常显示
 项目可以由 Codex 或开发者继续维护和扩展
 ```
-
